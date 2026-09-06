@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Zap, Loader2, Check, X, History, Clock, Download } from "lucide-react";
 import Link from "next/link";
 import { api } from "@/lib/api-client";
-import PetCard, { PetCardData } from "@/components/PetCard";
+import PetCard, { PetCardData } from "@/components/listings/PetCard";
 
 type MatchCategories = {
   species: boolean;

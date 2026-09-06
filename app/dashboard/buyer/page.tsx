@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Zap, MessageSquare, Bell, Search, ChevronRight, Loader2, Heart, Sparkles } from "lucide-react";
-import StatCard from "@/components/StatCard";
+import StatCard from "@/components/ui/StatCard";
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";
 

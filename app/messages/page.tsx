@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Send, Loader2, MessageSquare, Flag, Search, Archive, ArchiveRestore, CheckCheck, Check, Clock, AlertCircle, RotateCw, Video, Shield } from "lucide-react";
-import VideoCallModal from "@/components/VideoCallModal";
+import VideoCallModal from "@/components/modals/VideoCallModal";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";

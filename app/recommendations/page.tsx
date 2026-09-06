@@ -4,7 +4,7 @@ import { Zap, Heart, ExternalLink, Loader2, Settings, RefreshCw, ShieldCheck, Th
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";
-import PetCard, { PetCardData } from "@/components/PetCard";
+import PetCard, { PetCardData } from "@/components/listings/PetCard";
 
 type Pet = {
   id: string;

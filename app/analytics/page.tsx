@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { TrendingUp, BarChart2, Users, List, Loader2, RefreshCw, Printer, Download, Clock, Percent, Filter, ChevronDown, ChevronUp, Brain, Zap, FileText } from "lucide-react";
-import StatCard from "@/components/StatCard";
+import StatCard from "@/components/ui/StatCard";
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";
 import type { DemandForecast, PriceBand } from "@/lib/forecast";

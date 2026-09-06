@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 import { Loader2, ChevronRight, ChevronLeft } from "lucide-react";
 import { useAuth, Role } from "@/lib/auth-context";
 import { supabase } from "@/lib/supabase";
-import AuthVideoPanel from "@/components/AuthVideoPanel";
-import LocationSelect from "@/components/LocationSelect";
+import AuthVideoPanel from "@/components/auth/AuthVideoPanel";
+import LocationSelect from "@/components/ui/LocationSelect";
 
 const roleConfig: { role: Role; label: string; emoji: string; desc: string; active: string }[] = [
   { role: "buyer", label: "Buyer", emoji: "🛒", desc: "Browse and adopt pets", active: "border-indigo-500 bg-indigo-50" },

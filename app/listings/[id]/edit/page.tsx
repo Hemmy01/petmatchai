@@ -6,9 +6,9 @@ import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
-import ImageUpload from "@/components/ImageUpload";
-import VideoUpload from "@/components/VideoUpload";
-import LocationSelect from "@/components/LocationSelect";
+import ImageUpload from "@/components/listings/ImageUpload";
+import VideoUpload from "@/components/listings/VideoUpload";
+import LocationSelect from "@/components/ui/LocationSelect";
 
 const SPECIES = ["dog", "cat", "other"] as const;
 const GENDERS = ["male", "female"] as const;

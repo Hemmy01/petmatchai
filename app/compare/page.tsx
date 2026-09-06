@@ -5,7 +5,7 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import { ArrowLeft, Scale, CheckCircle, X, Loader2 } from "lucide-react";
 import { useCompare } from "@/lib/compare-context";
-import VerifiedBadge from "@/components/VerifiedBadge";
+import VerifiedBadge from "@/components/ui/VerifiedBadge";
 
 type Pet = {
   id: string; name: string; species: string; breed: string; age_months: number;

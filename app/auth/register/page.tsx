@@ -4,9 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Eye, EyeOff, Loader2, ChevronRight, ChevronLeft } from "lucide-react";
 import { useAuth, Role } from "@/lib/auth-context";
-import AuthVideoPanel from "@/components/AuthVideoPanel";
-import LocationSelect from "@/components/LocationSelect";
-import PhoneInput from "@/components/PhoneInput";
+import AuthVideoPanel from "@/components/auth/AuthVideoPanel";
+import LocationSelect from "@/components/ui/LocationSelect";
+import PhoneInput from "@/components/ui/PhoneInput";
 import { isValidNigerianMobile, toNationalDigits } from "@/lib/nigeria";
 
 const roleConfig: { role: Role; label: string; emoji: string; desc: string; active: string }[] = [

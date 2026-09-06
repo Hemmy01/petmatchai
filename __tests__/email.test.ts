@@ -1,50 +1,61 @@
 // Unit tests for email utility helpers
-// Resend SDK is mocked so no real emails are sent.
+// nodemailer is mocked so no real emails are sent.
 
-jest.mock('resend', () => ({
-  Resend: jest.fn().mockImplementation(() => ({
-    emails: {
-      send: jest.fn().mockResolvedValue({ id: 'mock-email-id' }),
-    },
-  })),
+const mockSendMail = jest.fn().mockResolvedValue({ messageId: 'mock-id' })
+
+jest.mock('nodemailer', () => ({
+  createTransport: jest.fn(() => ({ sendMail: mockSendMail })),
 }))
-
-import { Resend } from 'resend'
-
-const mockSend = (new (Resend as jest.Mock)()).emails.send as jest.Mock
 
 describe('email utilities', () => {
   beforeEach(() => {
-    jest.resetModules()
     jest.clearAllMocks()
   })
 
-  it('sendEmail is a no-op when RESEND_API_KEY is missing', async () => {
-    const originalKey = process.env.RESEND_API_KEY
-    delete process.env.RESEND_API_KEY
+  it('sendEmail is a no-op when SMTP credentials are missing', async () => {
+    const originalLogin = process.env.BREVO_SMTP_LOGIN
+    const originalKey = process.env.BREVO_SMTP_KEY
+    delete process.env.BREVO_SMTP_LOGIN
+    delete process.env.BREVO_SMTP_KEY
 
+    jest.resetModules()
     const { sendEmail } = require('../lib/email')
     await sendEmail('test@example.com', 'Subject', '<p>Body</p>')
-    expect(mockSend).not.toHaveBeenCalled()
+    expect(mockSendMail).not.toHaveBeenCalled()
 
-    process.env.RESEND_API_KEY = originalKey
+    process.env.BREVO_SMTP_LOGIN = originalLogin
+    process.env.BREVO_SMTP_KEY = originalKey
   })
 
-  it('emailNewOffer calls sendEmail with correct recipient', async () => {
+  it('emailNewOffer calls sendMail with the seller as recipient', async () => {
+    jest.resetModules()
     const { emailNewOffer } = require('../lib/email')
     await emailNewOffer('seller@example.com', 'John', 'Buddy', 250000)
-    // When RESEND_API_KEY is set (from setup.ts), send should be called
-    // (In CI without a real key this tests the path doesn't throw)
-    expect(typeof emailNewOffer).toBe('function')
+
+    expect(mockSendMail).toHaveBeenCalledTimes(1)
+    const [args] = mockSendMail.mock.calls[0]
+    expect(args.to).toBe('seller@example.com')
+    expect(args.subject).toContain('Buddy')
   })
 
-  it('emailOfferAccepted is callable without throwing', async () => {
+  it('emailOfferAccepted calls sendMail with the buyer as recipient', async () => {
+    jest.resetModules()
     const { emailOfferAccepted } = require('../lib/email')
-    await expect(emailOfferAccepted('buyer@example.com', 'Buddy', 150000)).resolves.not.toThrow()
+    await emailOfferAccepted('buyer@example.com', 'Buddy', 150000)
+
+    expect(mockSendMail).toHaveBeenCalledTimes(1)
+    const [args] = mockSendMail.mock.calls[0]
+    expect(args.to).toBe('buyer@example.com')
   })
 
-  it('emailNewMessage is callable without throwing', async () => {
+  it('emailNewMessage calls sendMail with the message preview in the body', async () => {
+    jest.resetModules()
     const { emailNewMessage } = require('../lib/email')
-    await expect(emailNewMessage('user@example.com', 'Alice', 'Buddy', 'Hello!')).resolves.not.toThrow()
+    await emailNewMessage('user@example.com', 'Alice', 'Buddy', 'Hello!')
+
+    expect(mockSendMail).toHaveBeenCalledTimes(1)
+    const [args] = mockSendMail.mock.calls[0]
+    expect(args.to).toBe('user@example.com')
+    expect(args.html).toContain('Hello!')
   })
 })

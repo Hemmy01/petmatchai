@@ -4,7 +4,7 @@ import { Heart, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";
-import PetCard, { PetCardData } from "@/components/PetCard";
+import PetCard, { PetCardData } from "@/components/listings/PetCard";
 
 export default function SavedPage() {
   const { user, loading: authLoading } = useAuth();

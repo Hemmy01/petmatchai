@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { List, Eye, MessageSquare, PlusCircle, ChevronRight, Bell, Loader2, Star, Pencil, CheckSquare, Trash2, Megaphone, MapPin, ShieldCheck } from "lucide-react";
-import StatCard from "@/components/StatCard";
-import VerifiedBadge from "@/components/VerifiedBadge";
+import StatCard from "@/components/ui/StatCard";
+import VerifiedBadge from "@/components/ui/VerifiedBadge";
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";
 

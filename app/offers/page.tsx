@@ -5,7 +5,7 @@ import { Loader2, CheckCircle, XCircle, ArrowLeftRight, ChevronDown, ChevronUp, 
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";
-import PaymentPanel from "@/components/PaymentPanel";
+import PaymentPanel from "@/components/payments/PaymentPanel";
 
 type Offer = {
   id: string;

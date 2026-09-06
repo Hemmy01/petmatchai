@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import "leaflet/dist/leaflet.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import { AuthProvider } from "@/lib/auth-context";
 import { CompareProvider } from "@/lib/compare-context";
-import CompareTray from "@/components/CompareTray";
+import CompareTray from "@/components/compare/CompareTray";
 import { ToastProvider } from "@/lib/toast-context";
-import ToastContainer from "@/components/ToastContainer"
-import IdleTimeoutModal from "@/components/IdleTimeoutModal";
-import ServiceWorkerRegistrar from "@/components/ServiceWorkerRegistrar";
-import SiteFooter from "@/components/SiteFooter";
-import OnboardingGuard from "@/components/OnboardingGuard";
+import ToastContainer from "@/components/ui/ToastContainer"
+import IdleTimeoutModal from "@/components/ui/IdleTimeoutModal";
+import ServiceWorkerRegistrar from "@/components/layout/ServiceWorkerRegistrar";
+import SiteFooter from "@/components/layout/SiteFooter";
+import OnboardingGuard from "@/components/auth/OnboardingGuard";
 
 const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 

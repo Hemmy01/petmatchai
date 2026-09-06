@@ -4,7 +4,7 @@ import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Eye, EyeOff, Loader2, Lock } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
-import AuthVideoPanel from "@/components/AuthVideoPanel";
+import AuthVideoPanel from "@/components/auth/AuthVideoPanel";
 
 function IdleBanner() {
   const searchParams = useSearchParams();

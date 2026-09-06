@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Users, List, AlertTriangle, CheckCircle, XCircle, Shield, Loader2, RefreshCw, Star, Trash2, Brain, Zap, Download, Search, Filter, Gavel, Tag, MessageSquare, X, Send } from "lucide-react";
-import StatCard from "@/components/StatCard";
+import StatCard from "@/components/ui/StatCard";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";

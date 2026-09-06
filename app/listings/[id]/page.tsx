@@ -1,12 +1,12 @@
 "use client";
 import { use, useEffect, useRef, useState } from "react";
 import { MapPin, CheckCircle, MessageSquare, Heart, Share2, Star, Loader2, ArrowLeft, Pencil, Layers, ThumbsUp, ChevronLeft, ChevronRight, Play, Check, ImagePlus, X as XIcon } from "lucide-react";
-import VerifiedBadge from "@/components/VerifiedBadge";
+import VerifiedBadge from "@/components/ui/VerifiedBadge";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import { api } from "@/lib/api-client";
 import { useAuth } from "@/lib/auth-context";
-import PetCard, { PetCardData } from "@/components/PetCard";
+import PetCard, { PetCardData } from "@/components/listings/PetCard";
 
 type Pet = {
   id: string; name: string; species: string; breed: string; age_months: number;

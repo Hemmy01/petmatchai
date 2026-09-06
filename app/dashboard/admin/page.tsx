@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Users, List, AlertTriangle, Shield, ChevronRight, Bell, BarChart2, Loader2, CheckCircle, XCircle } from "lucide-react";
-import StatCard from "@/components/StatCard";
+import StatCard from "@/components/ui/StatCard";
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";
 

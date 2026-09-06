@@ -7,8 +7,8 @@ import { api } from "@/lib/api-client";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import { useRef } from "react";
-import LocationSelect from "@/components/LocationSelect";
-import PhoneInput from "@/components/PhoneInput";
+import LocationSelect from "@/components/ui/LocationSelect";
+import PhoneInput from "@/components/ui/PhoneInput";
 import { isValidNigerianMobile, toNationalDigits } from "@/lib/nigeria";
 
 const tabs = ["Profile", "Preferences", "Notifications", "Security", "My Reviews"] as const;

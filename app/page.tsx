@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
-import PetCard from "@/components/PetCard";
+import PetCard from "@/components/listings/PetCard";
 
 async function getFeaturedPets() {
   const supabase = createClient(

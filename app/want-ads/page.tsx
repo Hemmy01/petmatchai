@@ -4,7 +4,7 @@ import { Loader2, Plus, Trash2, ToggleLeft, ToggleRight, MapPin, Megaphone, Mess
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api-client";
 import Link from "next/link";
-import LocationSelect from "@/components/LocationSelect";
+import LocationSelect from "@/components/ui/LocationSelect";
 
 type WantAd = {
   id: string;

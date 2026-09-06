@@ -4,8 +4,8 @@ import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import { Search, SlidersHorizontal, MapPin, Loader2, X, Map, ShieldCheck } from "lucide-react";
 import { supabase } from "@/lib/supabase";
-import PetCard, { PetCardData } from "@/components/PetCard";
-const PetMap = dynamic(() => import("@/components/PetMap"), { ssr: false, loading: () => <div className="w-full h-[420px] bg-gray-100 rounded-xl animate-pulse" /> });
+import PetCard, { PetCardData } from "@/components/listings/PetCard";
+const PetMap = dynamic(() => import("@/components/listings/PetMap"), { ssr: false, loading: () => <div className="w-full h-[420px] bg-gray-100 rounded-xl animate-pulse" /> });
 
 const speciesOptions = [
   { value: "All",   label: "All"    },
