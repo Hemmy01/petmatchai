@@ -2,6 +2,11 @@
   "name": "petmatchai",
   "version": "0.1.0",
   "private": true,
+  "description": "AI-matched pet marketplace for Nigeria with escrow payments",
+  "repository": "github:Hemmy01/petmatchai",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
