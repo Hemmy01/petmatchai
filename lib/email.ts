@@ -21,7 +21,7 @@ function wrap(body: string) {
   </div>
   <div style="padding:24px">${body}</div>
   <div style="padding:16px 24px;border-top:1px solid #f3f4f6;font-size:12px;color:#9ca3af">
-    Hemmy Kennel, Lagos · <a href="https://petmatchai.vercel.app/privacy" style="color:#9ca3af">Privacy Policy</a>
+    Hemmy Kennel, Lagos · <a href="https://petmatchai-nine.vercel.app/privacy" style="color:#9ca3af">Privacy Policy</a>
   </div>
 </div>
 </body></html>`
@@ -42,7 +42,7 @@ export function emailNewMessage(recipientEmail: string, senderName: string, petN
     `New message about ${petName}`,
     `<p style="color:#111827;font-size:16px;margin:0 0 8px"><strong>${senderName}</strong> sent you a message about <strong>${petName}</strong>:</p>
      <div style="background:#f3f4f6;border-radius:8px;padding:14px;color:#374151;font-size:14px;margin:0 0 20px">${preview}</div>
-     <a href="https://petmatchai.vercel.app/messages" style="background:${BRAND};color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600">Reply in PetMatchAI</a>`
+     <a href="https://petmatchai-nine.vercel.app/messages" style="background:${BRAND};color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600">Reply in PetMatchAI</a>`
   )
 }
 
@@ -51,7 +51,7 @@ export function emailNewOffer(sellerEmail: string, buyerName: string, petName: s
     sellerEmail,
     `New offer on ${petName}`,
     `<p style="color:#111827;font-size:16px;margin:0 0 16px"><strong>${buyerName}</strong> made an offer of <strong style="color:${BRAND}">₦${amount.toLocaleString()}</strong> on your listing <strong>${petName}</strong>.</p>
-     <a href="https://petmatchai.vercel.app/offers" style="background:${BRAND};color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600">Review Offer</a>`
+     <a href="https://petmatchai-nine.vercel.app/offers" style="background:${BRAND};color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600">Review Offer</a>`
   )
 }
 
@@ -78,7 +78,7 @@ export function emailWeeklyReport(
          <td style="padding:12px;font-size:18px;font-weight:700;color:#111827;text-align:right">${stats.activeListings}</td>
        </tr>
      </table>
-     <a href="https://petmatchai.vercel.app/analytics" style="background:${BRAND};color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;display:inline-block">View Full Analytics →</a>`
+     <a href="https://petmatchai-nine.vercel.app/analytics" style="background:${BRAND};color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;display:inline-block">View Full Analytics →</a>`
   )
 }
 
@@ -94,7 +94,7 @@ export function emailAccountStatus(
       "Your PetMatchAI account has been reactivated",
       `<p style="color:#111827;font-size:16px;margin:0 0 12px">${hi}</p>
        <p style="color:#374151;font-size:14px;margin:0 0 18px">Good news — your PetMatchAI account has been <strong style="color:#059669">reactivated</strong>. You can now sign in and continue using the platform.</p>
-       <a href="https://petmatchai.vercel.app/auth/login" style="background:#059669;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600">Sign in</a>`
+       <a href="https://petmatchai-nine.vercel.app/auth/login" style="background:#059669;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600">Sign in</a>`
     )
   }
   const disabled = status === "disabled"
@@ -113,6 +113,6 @@ export function emailOfferAccepted(buyerEmail: string, petName: string, amount: 
     `Your offer on ${petName} was accepted! 🎉`,
     `<p style="color:#111827;font-size:16px;margin:0 0 16px">Great news! Your offer of <strong style="color:#059669">₦${amount.toLocaleString()}</strong> for <strong>${petName}</strong> has been <strong>accepted</strong> by the seller.</p>
      <p style="color:#6b7280;font-size:14px;margin:0 0 20px">Visit the offers page to contact the seller and arrange the handover.</p>
-     <a href="https://petmatchai.vercel.app/offers" style="background:#059669;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600">View Offer</a>`
+     <a href="https://petmatchai-nine.vercel.app/offers" style="background:#059669;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600">View Offer</a>`
   )
 }

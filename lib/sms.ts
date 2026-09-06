@@ -30,13 +30,13 @@ export async function sendSMS(to: string, text: string): Promise<void> {
 }
 
 export function smsNewMessage(phone: string, senderName: string, petName: string) {
-  return sendSMS(phone, `PetMatchAI: ${senderName} sent you a message about ${petName}. Reply at petmatchai.vercel.app/messages`)
+  return sendSMS(phone, `PetMatchAI: ${senderName} sent you a message about ${petName}. Reply at petmatchai-nine.vercel.app/messages`)
 }
 
 export function smsNewOffer(phone: string, buyerName: string, petName: string, amount: number) {
-  return sendSMS(phone, `PetMatchAI: ${buyerName} made an offer of ₦${amount.toLocaleString()} on ${petName}. Review at petmatchai.vercel.app/offers`)
+  return sendSMS(phone, `PetMatchAI: ${buyerName} made an offer of ₦${amount.toLocaleString()} on ${petName}. Review at petmatchai-nine.vercel.app/offers`)
 }
 
 export function smsOfferAccepted(phone: string, petName: string, amount: number) {
-  return sendSMS(phone, `PetMatchAI: Your offer of ₦${amount.toLocaleString()} for ${petName} was accepted! Visit petmatchai.vercel.app/offers`)
+  return sendSMS(phone, `PetMatchAI: Your offer of ₦${amount.toLocaleString()} for ${petName} was accepted! Visit petmatchai-nine.vercel.app/offers`)
 }

@@ -1,5 +1,10 @@
 # PetMatchAI
 
+[![CI](https://github.com/Hemmy01/petmatchai/actions/workflows/ci.yml/badge.svg)](https://github.com/Hemmy01/petmatchai/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+**[Live demo →](https://petmatchai-nine.vercel.app/)**
+
 A pet marketplace for Nigeria that matches buyers to listings with a deterministic
 scoring algorithm, and protects payments with an escrow flow: funds are held after
 payment and only released once the buyer confirms handover (or an admin resolves a
@@ -89,6 +94,14 @@ npm run lint
 
 ## Deployment
 
-Built for [Vercel](vercel.json): connect the repo, set the environment
+Live at **[petmatchai-nine.vercel.app](https://petmatchai-nine.vercel.app/)**, deployed from this repo's `main` branch.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Hemmy01/petmatchai)
+
+To deploy your own copy: import the repo on Vercel, set the environment
 variables from `.env.example`, and deploy. If using Paystack in live mode,
 point its webhook at `/api/payments/webhook`.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
